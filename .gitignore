@@ -1,0 +1,9 @@
+data/
+sample/
+nohup.out
+.ipynb_checkpoints/
+credo*.txt
+MODEL/
+logs/
+deepwalk/
+CACHE/

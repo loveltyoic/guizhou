@@ -1,0 +1,2415 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://oog4yfyu0.bkt.clouddn.com/wordcloud.js"></script>
+    <script type="text/javascript" src="http://oog4yfyu0.bkt.clouddn.com/anhui.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/aomen.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/beijing.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/chongqing.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/fujian.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/gansu.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/guangdong.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/guangxi.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/guizhou.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/hainan.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/hebei.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/heilongjiang.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/henan.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/hubei.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/hunan.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/jiangsu.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/jiangxi.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/jilin.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/liaoning.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/neimenggu.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/ningxia.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/qinghai.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/shangdong.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/shanghai.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/shanxi.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/sichuan.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/taiwan.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/tianjin.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/xianggang.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/xinjiang.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/xizang.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/yunnan.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/zhejiang.js "></script>
+    <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/guangdong.js "></script>
+    <script type="text/javascript " src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM "></script>
+    <script type="text/javascript " src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js "></script>
+</head>
+
+<body>
+    <div id="main" style="width: 1600px;height:800px; "></div>
+    <script type="text/javascript ">
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+    "backgroundColor": "#fff", 
+    "title": {
+        "text": "关系图-环形布局示例", 
+        "subtextStyle": {
+            "color": "#aaa", 
+            "fontSize": 12
+        }, 
+        "textStyle": {
+            "color": "#000", 
+            "fontSize": 18
+        }, 
+        "subtext": "", 
+        "left": "auto"
+    }, 
+    "color": [
+        "#c23531", 
+        "#2f4554", 
+        "#61a0a8", 
+        "#d48265", 
+        "#749f83", 
+        "#ca8622", 
+        "#bda29a", 
+        "#6e7074", 
+        "#546570", 
+        "#c4ccd3"
+    ], 
+    "series": [
+        {
+            "force": {
+                "repulsion": 1000, 
+                "edgeLength": 50, 
+                "gravity": 0.001
+            }, 
+            "links": [
+                {
+                    "source": "4377906289869500514", 
+                    "target": "4377906281969500514", 
+                    "value": 62
+                }, 
+                {
+                    "source": "4377906285525800514", 
+                    "target": "4377906289869500514", 
+                    "value": 100
+                }, 
+                {
+                    "source": "4377906284594800514", 
+                    "target": "4377906285594800514", 
+                    "value": 270
+                }, 
+                {
+                    "source": "4377906284514600514", 
+                    "target": "4377906284594800514", 
+                    "value": 306
+                }, 
+                {
+                    "source": "4377906289425800514", 
+                    "target": "4377906284653600514", 
+                    "value": 321
+                }, 
+                {
+                    "source": "", 
+                    "target": "4377906289425800514", 
+                    "value": 194
+                }, 
+                {
+                    "source": "4377906284525800514", 
+                    "target": "4377906280334600514", 
+                    "value": 1017
+                }, 
+                {
+                    "source": "4377906281234600514", 
+                    "target": "4377906284525800514", 
+                    "value": 855
+                }, 
+                {
+                    "source": "4377906284422600514", 
+                    "target": "4377906283422600514", 
+                    "value": 74
+                }, 
+                {
+                    "source": "3377906289434510514", 
+                    "target": "4377906284422600514", 
+                    "value": 63
+                }, 
+                {
+                    "source": "4377906287959500514", 
+                    "target": "4377906284422600514", 
+                    "value": 172
+                }, 
+                {
+                    "source": "4377906282532600514", 
+                    "target": "4377906289244800514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "9377906285566510514", 
+                    "target": "4377906282532600514", 
+                    "value": 172
+                }, 
+                {
+                    "source": "4377906281741600514", 
+                    "target": "4377906286525800514", 
+                    "value": 121
+                }, 
+                {
+                    "source": "3377906281518510514", 
+                    "target": "4377906281741600514", 
+                    "value": 121
+                }, 
+                {
+                    "source": "4377906288593600514", 
+                    "target": "4377906284514600514", 
+                    "value": 121
+                }, 
+                {
+                    "source": "4377906288593600514", 
+                    "target": "4377906288063800514", 
+                    "value": 305
+                }, 
+                {
+                    "source": "4377906280784800514", 
+                    "target": "4377906288593600514", 
+                    "value": 316
+                }, 
+                {
+                    "source": "4377906284514600514", 
+                    "target": "4377906284594800514", 
+                    "value": 306
+                }, 
+                {
+                    "source": "4377906280163800514", 
+                    "target": "4377906284514600514", 
+                    "value": 282
+                }, 
+                {
+                    "source": "4377906288593600514", 
+                    "target": "4377906284514600514", 
+                    "value": 121
+                }, 
+                {
+                    "source": "4377906284959500514", 
+                    "target": "4377906288959500514", 
+                    "value": 87
+                }, 
+                {
+                    "source": "4377906282969500514", 
+                    "target": "4377906284959500514", 
+                    "value": 69
+                }, 
+                {
+                    "source": "4377906285141600514", 
+                    "target": "4377906284959500514", 
+                    "value": 37
+                }, 
+                {
+                    "source": "4377906289141600514", 
+                    "target": "4377906284959500514", 
+                    "value": 43
+                }, 
+                {
+                    "source": "4377906287169500514", 
+                    "target": "3377906281518510514", 
+                    "value": 76
+                }, 
+                {
+                    "source": "4377906287169500514", 
+                    "target": "4377906284759500514", 
+                    "value": 64
+                }, 
+                {
+                    "source": "4377906286169500514", 
+                    "target": "4377906287169500514", 
+                    "value": 117
+                }, 
+                {
+                    "source": "4377906282969500514", 
+                    "target": "4377906287141600514", 
+                    "value": 93
+                }, 
+                {
+                    "source": "4377906282969500514", 
+                    "target": "4377906284959500514", 
+                    "value": 69
+                }, 
+                {
+                    "source": "4377906282969500514", 
+                    "target": "4377906280969500514", 
+                    "value": 70
+                }, 
+                {
+                    "source": "4377906285525800514", 
+                    "target": "4377906282969500514", 
+                    "value": 90
+                }, 
+                {
+                    "source": "3377906283328510514", 
+                    "target": "3377906282328510514", 
+                    "value": 63
+                }, 
+                {
+                    "source": "3377906280395510514", 
+                    "target": "3377906283328510514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "4377906283815800514", 
+                    "target": "4377906286169500514", 
+                    "value": 83
+                }, 
+                {
+                    "source": "4377906282815800514", 
+                    "target": "4377906283815800514", 
+                    "value": 63
+                }, 
+                {
+                    "source": "4377906282815800514", 
+                    "target": "4377906283815800514", 
+                    "value": 63
+                }, 
+                {
+                    "source": "4377906287141600514", 
+                    "target": "4377906282815800514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "4377906285041600514", 
+                    "target": "4377906281041600514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "9377906284555510514", 
+                    "target": "4377906285041600514", 
+                    "value": 44
+                }, 
+                {
+                    "source": "4377906282141600514", 
+                    "target": "4377906288041600514", 
+                    "value": 176
+                }, 
+                {
+                    "source": "4377906284141600514", 
+                    "target": "4377906282141600514", 
+                    "value": 122
+                }, 
+                {
+                    "source": "4377906282541600514", 
+                    "target": "3377906287886510514", 
+                    "value": 529
+                }, 
+                {
+                    "source": "4377906282541600514", 
+                    "target": "3377906286918510514", 
+                    "value": 304
+                }, 
+                {
+                    "source": "4377906282541600514", 
+                    "target": "3377906280028510514", 
+                    "value": 318
+                }, 
+                {
+                    "source": "4377906287063800514", 
+                    "target": "4377906282541600514", 
+                    "value": 369
+                }, 
+                {
+                    "source": "4377906283422600514", 
+                    "target": "3377906285434510514", 
+                    "value": 28
+                }, 
+                {
+                    "source": "4377906284422600514", 
+                    "target": "4377906283422600514", 
+                    "value": 74
+                }, 
+                {
+                    "source": "4377906288893600514", 
+                    "target": "", 
+                    "value": 85
+                }, 
+                {
+                    "source": "4377906286343600514", 
+                    "target": "4377906288893600514", 
+                    "value": 187
+                }, 
+                {
+                    "source": "4377906282763800514", 
+                    "target": "4377906289663800514", 
+                    "value": 106
+                }, 
+                {
+                    "source": "4377906282763800514", 
+                    "target": "4377906286041600514", 
+                    "value": 80
+                }, 
+                {
+                    "source": "4377906281763800514", 
+                    "target": "4377906282763800514", 
+                    "value": 79
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "3377906284395510514", 
+                    "value": 87
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "3377906287934510514", 
+                    "value": 79
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "4377906288738500514", 
+                    "value": 94
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "3377906289674510514", 
+                    "value": 83
+                }, 
+                {
+                    "source": "4377906287663800514", 
+                    "target": "3377906287674510514", 
+                    "value": 135
+                }, 
+                {
+                    "source": "3377906287934510514", 
+                    "target": "3377906287886510514", 
+                    "value": 294
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "3377906287934510514", 
+                    "value": 69
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "3377906287934510514", 
+                    "value": 79
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "3377906287934510514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "3377906287934510514", 
+                    "value": 81
+                }, 
+                {
+                    "source": "9377906285615510514", 
+                    "target": "3377906287886510514", 
+                    "value": 277
+                }, 
+                {
+                    "source": "9377906286615510514", 
+                    "target": "9377906285615510514", 
+                    "value": 64
+                }, 
+                {
+                    "source": "9377906283125510514", 
+                    "target": "9377906283776510514", 
+                    "value": 179
+                }, 
+                {
+                    "source": "4377906283769500514", 
+                    "target": "9377906283125510514", 
+                    "value": 123
+                }, 
+                {
+                    "source": "4377906280815800514", 
+                    "target": "", 
+                    "value": 192
+                }, 
+                {
+                    "source": "4377906287194800514", 
+                    "target": "4377906280815800514", 
+                    "value": 318
+                }, 
+                {
+                    "source": "4377906280784800514", 
+                    "target": "4377906288593600514", 
+                    "value": 316
+                }, 
+                {
+                    "source": "4377906281784800514", 
+                    "target": "4377906280784800514", 
+                    "value": 337
+                }, 
+                {
+                    "source": "9377906285566510514", 
+                    "target": "4377906282532600514", 
+                    "value": 172
+                }, 
+                {
+                    "source": "4377906283759500514", 
+                    "target": "9377906285566510514", 
+                    "value": 193
+                }, 
+                {
+                    "source": "9377906286566510514", 
+                    "target": "9377906285566510514", 
+                    "value": 285
+                }, 
+                {
+                    "source": "9377906283776510514", 
+                    "target": "9377906282776510514", 
+                    "value": 80
+                }, 
+                {
+                    "source": "9377906283125510514", 
+                    "target": "9377906283776510514", 
+                    "value": 179
+                }, 
+                {
+                    "source": "4377906281763800514", 
+                    "target": "4377906282763800514", 
+                    "value": 79
+                }, 
+                {
+                    "source": "4377906280763800514", 
+                    "target": "4377906281763800514", 
+                    "value": 112
+                }, 
+                {
+                    "source": "4377906289863800514", 
+                    "target": "4377906283769500514", 
+                    "value": 93
+                }, 
+                {
+                    "source": "", 
+                    "target": "4377906289863800514", 
+                    "value": 78
+                }, 
+                {
+                    "source": "4377906285343600514", 
+                    "target": "4377906286343600514", 
+                    "value": 175
+                }, 
+                {
+                    "source": "4377906285759500514", 
+                    "target": "4377906285343600514", 
+                    "value": 210
+                }, 
+                {
+                    "source": "4377906284653600514", 
+                    "target": "4377906281234600514", 
+                    "value": 143
+                }, 
+                {
+                    "source": "4377906289425800514", 
+                    "target": "4377906284653600514", 
+                    "value": 321
+                }, 
+                {
+                    "source": "4377906287063800514", 
+                    "target": "4377906282541600514", 
+                    "value": 369
+                }, 
+                {
+                    "source": "4377906288063800514", 
+                    "target": "4377906287063800514", 
+                    "value": 342
+                }, 
+                {
+                    "source": "4377906287869500514", 
+                    "target": "4377906284759500514", 
+                    "value": 74
+                }, 
+                {
+                    "source": "4377906287869500514", 
+                    "target": "3377906281518510514", 
+                    "value": 86
+                }, 
+                {
+                    "source": "4377906288869500514", 
+                    "target": "4377906287869500514", 
+                    "value": 150
+                }, 
+                {
+                    "source": "4377906286041600514", 
+                    "target": "9377906281555510514", 
+                    "value": 65
+                }, 
+                {
+                    "source": "4377906282763800514", 
+                    "target": "4377906286041600514", 
+                    "value": 80
+                }, 
+                {
+                    "source": "4377906288041600514", 
+                    "target": "4377906289041600514", 
+                    "value": 328
+                }, 
+                {
+                    "source": "4377906282141600514", 
+                    "target": "4377906288041600514", 
+                    "value": 176
+                }, 
+                {
+                    "source": "4377906281141600514", 
+                    "target": "4377906280141600514", 
+                    "value": 176
+                }, 
+                {
+                    "source": "3377906284028510514", 
+                    "target": "4377906281141600514", 
+                    "value": 322
+                }, 
+                {
+                    "source": "4377906289141600514", 
+                    "target": "4377906284959500514", 
+                    "value": 43
+                }, 
+                {
+                    "source": "4377906289141600514", 
+                    "target": "4377906280969500514", 
+                    "value": 44
+                }, 
+                {
+                    "source": "4377906289141600514", 
+                    "target": "4377906287141600514", 
+                    "value": 67
+                }, 
+                {
+                    "source": "4377906281241600514", 
+                    "target": "4377906289141600514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "3377906284395510514", 
+                    "target": "4377906280763800514", 
+                    "value": 129
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "3377906284395510514", 
+                    "value": 77
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "3377906284395510514", 
+                    "value": 87
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "3377906284395510514", 
+                    "value": 81
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "3377906284395510514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "4377906283759500514", 
+                    "target": "9377906285566510514", 
+                    "value": 193
+                }, 
+                {
+                    "source": "4377906282759500514", 
+                    "target": "4377906283759500514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "4377906283959500514", 
+                    "target": "4377906281959500514", 
+                    "value": 126
+                }, 
+                {
+                    "source": "4377906283959500514", 
+                    "target": "4377906282959500514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "4377906280141600514", 
+                    "target": "4377906283959500514", 
+                    "value": 123
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "3377906287934510514", 
+                    "value": 69
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "4377906288738500514", 
+                    "value": 84
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "3377906289674510514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "3377906284395510514", 
+                    "value": 77
+                }, 
+                {
+                    "source": "4377906282541600514", 
+                    "target": "3377906286918510514", 
+                    "value": 304
+                }, 
+                {
+                    "source": "3377906284028510514", 
+                    "target": "4377906281141600514", 
+                    "value": 322
+                }, 
+                {
+                    "source": "4377906284838500514", 
+                    "target": "3377906284028510514", 
+                    "value": 310
+                }, 
+                {
+                    "source": "4377906288738500514", 
+                    "target": "3377906284028510514", 
+                    "value": 253
+                }, 
+                {
+                    "source": "3377906288228510514", 
+                    "target": "4377906289663800514", 
+                    "value": 79
+                }, 
+                {
+                    "source": "3377906289228510514", 
+                    "target": "3377906288228510514", 
+                    "value": 58
+                }, 
+                {
+                    "source": "4377906280334600514", 
+                    "target": "4377906286032600514", 
+                    "value": 435
+                }, 
+                {
+                    "source": "4377906284525800514", 
+                    "target": "4377906280334600514", 
+                    "value": 1017
+                }, 
+                {
+                    "source": "4377906285681600514", 
+                    "target": "4377906286681600514", 
+                    "value": 37
+                }, 
+                {
+                    "source": "4377906280863800514", 
+                    "target": "4377906285681600514", 
+                    "value": 100
+                }, 
+                {
+                    "source": "4377906281784800514", 
+                    "target": "4377906280784800514", 
+                    "value": 337
+                }, 
+                {
+                    "source": "3377906282418510514", 
+                    "target": "4377906281784800514", 
+                    "value": 118
+                }, 
+                {
+                    "source": "4377906288425800514", 
+                    "target": "4377906288869500514", 
+                    "value": 161
+                }, 
+                {
+                    "source": "4377906287425800514", 
+                    "target": "4377906288425800514", 
+                    "value": 190
+                }, 
+                {
+                    "source": "4377906280763800514", 
+                    "target": "4377906281763800514", 
+                    "value": 112
+                }, 
+                {
+                    "source": "3377906280028510514", 
+                    "target": "4377906280763800514", 
+                    "value": 134
+                }, 
+                {
+                    "source": "4377906287663800514", 
+                    "target": "4377906280763800514", 
+                    "value": 177
+                }, 
+                {
+                    "source": "3377906284395510514", 
+                    "target": "4377906280763800514", 
+                    "value": 129
+                }, 
+                {
+                    "source": "4377906280863800514", 
+                    "target": "4377906285681600514", 
+                    "value": 100
+                }, 
+                {
+                    "source": "", 
+                    "target": "4377906280863800514", 
+                    "value": 70
+                }, 
+                {
+                    "source": "4377906287863800514", 
+                    "target": "", 
+                    "value": 73
+                }, 
+                {
+                    "source": "4377906282769500514", 
+                    "target": "4377906287863800514", 
+                    "value": 130
+                }, 
+                {
+                    "source": "3377906281774510514", 
+                    "target": "4377906280913600514", 
+                    "value": 102
+                }, 
+                {
+                    "source": "4377906287663800514", 
+                    "target": "3377906281774510514", 
+                    "value": 155
+                }, 
+                {
+                    "source": "4377906288738500514", 
+                    "target": "3377906284028510514", 
+                    "value": 253
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "4377906288738500514", 
+                    "value": 84
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "4377906288738500514", 
+                    "value": 94
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "4377906288738500514", 
+                    "value": 88
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "4377906288738500514", 
+                    "value": 96
+                }, 
+                {
+                    "source": "4377906280329500514", 
+                    "target": "4377906288421600514", 
+                    "value": 264
+                }, 
+                {
+                    "source": "4377906280329500514", 
+                    "target": "3377906282418510514", 
+                    "value": 171
+                }, 
+                {
+                    "source": "4377906286681600514", 
+                    "target": "4377906280329500514", 
+                    "value": 143
+                }, 
+                {
+                    "source": "4377906285525800514", 
+                    "target": "4377906289869500514", 
+                    "value": 100
+                }, 
+                {
+                    "source": "4377906285525800514", 
+                    "target": "4377906282969500514", 
+                    "value": 90
+                }, 
+                {
+                    "source": "4377906286525800514", 
+                    "target": "4377906285525800514", 
+                    "value": 65
+                }, 
+                {
+                    "source": "4377906286525800514", 
+                    "target": "4377906285525800514", 
+                    "value": 65
+                }, 
+                {
+                    "source": "4377906281741600514", 
+                    "target": "4377906286525800514", 
+                    "value": 121
+                }, 
+                {
+                    "source": "4377906280241600514", 
+                    "target": "4377906281241600514", 
+                    "value": 180
+                }, 
+                {
+                    "source": "3377906289044510514", 
+                    "target": "4377906280241600514", 
+                    "value": 164
+                }, 
+                {
+                    "source": "4377906281241600514", 
+                    "target": "4377906289141600514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "4377906280241600514", 
+                    "target": "4377906281241600514", 
+                    "value": 180
+                }, 
+                {
+                    "source": "4377906280344800514", 
+                    "target": "9377906288175510514", 
+                    "value": 85
+                }, 
+                {
+                    "source": "4377906289243600514", 
+                    "target": "4377906280344800514", 
+                    "value": 33
+                }, 
+                {
+                    "source": "4377906288234600514", 
+                    "target": "4377906283525800514", 
+                    "value": 1015
+                }, 
+                {
+                    "source": "4377906285032600514", 
+                    "target": "4377906288234600514", 
+                    "value": 438
+                }, 
+                {
+                    "source": "4377906285334600514", 
+                    "target": "4377906286334600514", 
+                    "value": 93
+                }, 
+                {
+                    "source": "4377906285594800514", 
+                    "target": "4377906285334600514", 
+                    "value": 83
+                }, 
+                {
+                    "source": "4377906289063800514", 
+                    "target": "4377906280163800514", 
+                    "value": 349
+                }, 
+                {
+                    "source": "3377906287886510514", 
+                    "target": "4377906289063800514", 
+                    "value": 385
+                }, 
+                {
+                    "source": "4377906287663800514", 
+                    "target": "4377906280763800514", 
+                    "value": 177
+                }, 
+                {
+                    "source": "4377906287663800514", 
+                    "target": "3377906287674510514", 
+                    "value": 135
+                }, 
+                {
+                    "source": "4377906287663800514", 
+                    "target": "3377906281774510514", 
+                    "value": 155
+                }, 
+                {
+                    "source": "4377906288663800514", 
+                    "target": "4377906287663800514", 
+                    "value": 111
+                }, 
+                {
+                    "source": "4377906289663800514", 
+                    "target": "4377906288663800514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "3377906288228510514", 
+                    "target": "4377906289663800514", 
+                    "value": 79
+                }, 
+                {
+                    "source": "4377906282763800514", 
+                    "target": "4377906289663800514", 
+                    "value": 106
+                }, 
+                {
+                    "source": "3377906289228510514", 
+                    "target": "3377906288228510514", 
+                    "value": 58
+                }, 
+                {
+                    "source": "3377906282328510514", 
+                    "target": "3377906289228510514", 
+                    "value": 59
+                }, 
+                {
+                    "source": "9377906281555510514", 
+                    "target": "3377906289228510514", 
+                    "value": 70
+                }, 
+                {
+                    "source": "4377906286169500514", 
+                    "target": "4377906287169500514", 
+                    "value": 117
+                }, 
+                {
+                    "source": "4377906283815800514", 
+                    "target": "4377906286169500514", 
+                    "value": 83
+                }, 
+                {
+                    "source": "4377906282769500514", 
+                    "target": "4377906284769500514", 
+                    "value": 68
+                }, 
+                {
+                    "source": "4377906282769500514", 
+                    "target": "4377906287863800514", 
+                    "value": 130
+                }, 
+                {
+                    "source": "3377906285434510514", 
+                    "target": "4377906282769500514", 
+                    "value": 66
+                }, 
+                {
+                    "source": "4377906288869500514", 
+                    "target": "4377906287869500514", 
+                    "value": 150
+                }, 
+                {
+                    "source": "4377906288425800514", 
+                    "target": "4377906288869500514", 
+                    "value": 161
+                }, 
+                {
+                    "source": "4377906280969500514", 
+                    "target": "4377906281969500514", 
+                    "value": 28
+                }, 
+                {
+                    "source": "4377906282969500514", 
+                    "target": "4377906280969500514", 
+                    "value": 70
+                }, 
+                {
+                    "source": "4377906285141600514", 
+                    "target": "4377906280969500514", 
+                    "value": 38
+                }, 
+                {
+                    "source": "4377906289141600514", 
+                    "target": "4377906280969500514", 
+                    "value": 44
+                }, 
+                {
+                    "source": "4377906282759500514", 
+                    "target": "4377906283759500514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "9377906286566510514", 
+                    "target": "4377906282759500514", 
+                    "value": 181
+                }, 
+                {
+                    "source": "4377906285759500514", 
+                    "target": "4377906285343600514", 
+                    "value": 210
+                }, 
+                {
+                    "source": "4377906284759500514", 
+                    "target": "4377906285759500514", 
+                    "value": 147
+                }, 
+                {
+                    "source": "4377906281959500514", 
+                    "target": "4377906288959500514", 
+                    "value": 125
+                }, 
+                {
+                    "source": "4377906283959500514", 
+                    "target": "4377906281959500514", 
+                    "value": 126
+                }, 
+                {
+                    "source": "4377906287959500514", 
+                    "target": "4377906284422600514", 
+                    "value": 172
+                }, 
+                {
+                    "source": "4377906288959500514", 
+                    "target": "4377906287959500514", 
+                    "value": 182
+                }, 
+                {
+                    "source": "3377906289434510514", 
+                    "target": "4377906284422600514", 
+                    "value": 63
+                }, 
+                {
+                    "source": "3377906289044510514", 
+                    "target": "3377906289434510514", 
+                    "value": 44
+                }, 
+                {
+                    "source": "4377906287425800514", 
+                    "target": "4377906288425800514", 
+                    "value": 190
+                }, 
+                {
+                    "source": "", 
+                    "target": "4377906287425800514", 
+                    "value": 115
+                }, 
+                {
+                    "source": "4377906289525800514", 
+                    "target": "4377906284838500514", 
+                    "value": 126
+                }, 
+                {
+                    "source": "4377906289525800514", 
+                    "target": "4377906289813600514", 
+                    "value": 33
+                }, 
+                {
+                    "source": "4377906289244800514", 
+                    "target": "4377906289525800514", 
+                    "value": 85
+                }, 
+                {
+                    "source": "4377906280141600514", 
+                    "target": "4377906283959500514", 
+                    "value": 123
+                }, 
+                {
+                    "source": "4377906281141600514", 
+                    "target": "4377906280141600514", 
+                    "value": 176
+                }, 
+                {
+                    "source": "4377906286141600514", 
+                    "target": "4377906285141600514", 
+                    "value": 27
+                }, 
+                {
+                    "source": "4377906282959500514", 
+                    "target": "4377906286141600514", 
+                    "value": 41
+                }, 
+                {
+                    "source": "4377906280234600514", 
+                    "target": "4377906282653600514", 
+                    "value": 145
+                }, 
+                {
+                    "source": "4377906283525800514", 
+                    "target": "4377906280234600514", 
+                    "value": 850
+                }, 
+                {
+                    "source": "4377906288959500514", 
+                    "target": "4377906287959500514", 
+                    "value": 182
+                }, 
+                {
+                    "source": "4377906284959500514", 
+                    "target": "4377906288959500514", 
+                    "value": 87
+                }, 
+                {
+                    "source": "4377906281959500514", 
+                    "target": "4377906288959500514", 
+                    "value": 125
+                }, 
+                {
+                    "source": "4377906283769500514", 
+                    "target": "3377906289044510514", 
+                    "value": 51
+                }, 
+                {
+                    "source": "4377906283769500514", 
+                    "target": "9377906283125510514", 
+                    "value": 123
+                }, 
+                {
+                    "source": "4377906289863800514", 
+                    "target": "4377906283769500514", 
+                    "value": 93
+                }, 
+                {
+                    "source": "4377906284769500514", 
+                    "target": "4377906283769500514", 
+                    "value": 26
+                }, 
+                {
+                    "source": "3377906280028510514", 
+                    "target": "4377906280763800514", 
+                    "value": 134
+                }, 
+                {
+                    "source": "4377906282541600514", 
+                    "target": "3377906280028510514", 
+                    "value": 318
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "4377906288738500514", 
+                    "value": 96
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "3377906289674510514", 
+                    "value": 85
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "3377906284395510514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "3377906287934510514", 
+                    "value": 81
+                }, 
+                {
+                    "source": "4377906289041600514", 
+                    "target": "3377906285934510514", 
+                    "value": 254
+                }, 
+                {
+                    "source": "3377906289044510514", 
+                    "target": "3377906289434510514", 
+                    "value": 44
+                }, 
+                {
+                    "source": "3377906289044510514", 
+                    "target": "4377906280241600514", 
+                    "value": 164
+                }, 
+                {
+                    "source": "4377906283769500514", 
+                    "target": "3377906289044510514", 
+                    "value": 51
+                }, 
+                {
+                    "source": "9377906284555510514", 
+                    "target": "4377906285041600514", 
+                    "value": 44
+                }, 
+                {
+                    "source": "3377906282328510514", 
+                    "target": "9377906284555510514", 
+                    "value": 41
+                }, 
+                {
+                    "source": "9377906281555510514", 
+                    "target": "9377906284555510514", 
+                    "value": 52
+                }, 
+                {
+                    "source": "9377906286566510514", 
+                    "target": "9377906285566510514", 
+                    "value": 285
+                }, 
+                {
+                    "source": "9377906286566510514", 
+                    "target": "4377906282759500514", 
+                    "value": 181
+                }, 
+                {
+                    "source": "9377906289175510514", 
+                    "target": "9377906286566510514", 
+                    "value": 171
+                }, 
+                {
+                    "source": "9377906289175510514", 
+                    "target": "9377906286566510514", 
+                    "value": 171
+                }, 
+                {
+                    "source": "9377906288175510514", 
+                    "target": "9377906289175510514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "4377906287194800514", 
+                    "target": "4377906280815800514", 
+                    "value": 318
+                }, 
+                {
+                    "source": "4377906288194800514", 
+                    "target": "4377906287194800514", 
+                    "value": 213
+                }, 
+                {
+                    "source": "9377906282776510514", 
+                    "target": "4377906288194800514", 
+                    "value": 96
+                }, 
+                {
+                    "source": "9377906283776510514", 
+                    "target": "9377906282776510514", 
+                    "value": 80
+                }, 
+                {
+                    "source": "4377906281041600514", 
+                    "target": "", 
+                    "value": 59
+                }, 
+                {
+                    "source": "3377906280395510514", 
+                    "target": "4377906281041600514", 
+                    "value": 118
+                }, 
+                {
+                    "source": "4377906285041600514", 
+                    "target": "4377906281041600514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "4377906285141600514", 
+                    "target": "4377906280969500514", 
+                    "value": 38
+                }, 
+                {
+                    "source": "4377906285141600514", 
+                    "target": "4377906287141600514", 
+                    "value": 61
+                }, 
+                {
+                    "source": "4377906285141600514", 
+                    "target": "4377906284959500514", 
+                    "value": 37
+                }, 
+                {
+                    "source": "4377906286141600514", 
+                    "target": "4377906285141600514", 
+                    "value": 27
+                }, 
+                {
+                    "source": "3377906282418510514", 
+                    "target": "4377906281784800514", 
+                    "value": 118
+                }, 
+                {
+                    "source": "4377906280329500514", 
+                    "target": "3377906282418510514", 
+                    "value": 171
+                }, 
+                {
+                    "source": "4377906286334600514", 
+                    "target": "3377906282418510514", 
+                    "value": 68
+                }, 
+                {
+                    "source": "3377906282328510514", 
+                    "target": "9377906284555510514", 
+                    "value": 41
+                }, 
+                {
+                    "source": "3377906282328510514", 
+                    "target": "3377906289228510514", 
+                    "value": 59
+                }, 
+                {
+                    "source": "3377906283328510514", 
+                    "target": "3377906282328510514", 
+                    "value": 63
+                }, 
+                {
+                    "source": "9377906281555510514", 
+                    "target": "3377906289228510514", 
+                    "value": 70
+                }, 
+                {
+                    "source": "9377906281555510514", 
+                    "target": "9377906284555510514", 
+                    "value": 52
+                }, 
+                {
+                    "source": "4377906286041600514", 
+                    "target": "9377906281555510514", 
+                    "value": 65
+                }, 
+                {
+                    "source": "9377906288175510514", 
+                    "target": "9377906289175510514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "4377906280344800514", 
+                    "target": "9377906288175510514", 
+                    "value": 85
+                }, 
+                {
+                    "source": "4377906282653600514", 
+                    "target": "4377906286843600514", 
+                    "value": 322
+                }, 
+                {
+                    "source": "4377906280234600514", 
+                    "target": "4377906282653600514", 
+                    "value": 145
+                }, 
+                {
+                    "source": "4377906280913600514", 
+                    "target": "4377906289243600514", 
+                    "value": 52
+                }, 
+                {
+                    "source": "3377906281774510514", 
+                    "target": "4377906280913600514", 
+                    "value": 102
+                }, 
+                {
+                    "source": "3377906289674510514", 
+                    "target": "4377906280913600514", 
+                    "value": 77
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "3377906289674510514", 
+                    "value": 77
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "3377906284395510514", 
+                    "value": 81
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "3377906287934510514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "4377906288738500514", 
+                    "value": 88
+                }, 
+                {
+                    "source": "4377906288243600514", 
+                    "target": "4377906287243600514", 
+                    "value": 75
+                }, 
+                {
+                    "source": "4377906289243600514", 
+                    "target": "4377906280344800514", 
+                    "value": 33
+                }, 
+                {
+                    "source": "4377906280913600514", 
+                    "target": "4377906289243600514", 
+                    "value": 52
+                }, 
+                {
+                    "source": "4377906289813600514", 
+                    "target": "4377906289243600514", 
+                    "value": 28
+                }, 
+                {
+                    "source": "4377906283141600514", 
+                    "target": "4377906284141600514", 
+                    "value": 97
+                }, 
+                {
+                    "source": "4377906282959500514", 
+                    "target": "4377906283141600514", 
+                    "value": 60
+                }, 
+                {
+                    "source": "4377906281969500514", 
+                    "target": "4377906283141600514", 
+                    "value": 36
+                }, 
+                {
+                    "source": "4377906287141600514", 
+                    "target": "4377906282815800514", 
+                    "value": 89
+                }, 
+                {
+                    "source": "4377906282969500514", 
+                    "target": "4377906287141600514", 
+                    "value": 93
+                }, 
+                {
+                    "source": "4377906285141600514", 
+                    "target": "4377906287141600514", 
+                    "value": 61
+                }, 
+                {
+                    "source": "4377906289141600514", 
+                    "target": "4377906287141600514", 
+                    "value": 67
+                }, 
+                {
+                    "source": "4377906285032600514", 
+                    "target": "4377906288234600514", 
+                    "value": 438
+                }, 
+                {
+                    "source": "", 
+                    "target": "4377906285032600514", 
+                    "value": 258
+                }, 
+                {
+                    "source": "4377906288063800514", 
+                    "target": "4377906287063800514", 
+                    "value": 342
+                }, 
+                {
+                    "source": "4377906280163800514", 
+                    "target": "4377906288063800514", 
+                    "value": 466
+                }, 
+                {
+                    "source": "4377906288593600514", 
+                    "target": "4377906288063800514", 
+                    "value": 305
+                }, 
+                {
+                    "source": "4377906280163800514", 
+                    "target": "4377906288063800514", 
+                    "value": 466
+                }, 
+                {
+                    "source": "4377906280163800514", 
+                    "target": "4377906284514600514", 
+                    "value": 282
+                }, 
+                {
+                    "source": "4377906289063800514", 
+                    "target": "4377906280163800514", 
+                    "value": 349
+                }, 
+                {
+                    "source": "4377906288663800514", 
+                    "target": "4377906287663800514", 
+                    "value": 111
+                }, 
+                {
+                    "source": "4377906289663800514", 
+                    "target": "4377906288663800514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "3377906281518510514", 
+                    "target": "4377906281741600514", 
+                    "value": 121
+                }, 
+                {
+                    "source": "4377906287169500514", 
+                    "target": "3377906281518510514", 
+                    "value": 76
+                }, 
+                {
+                    "source": "4377906287869500514", 
+                    "target": "3377906281518510514", 
+                    "value": 86
+                }, 
+                {
+                    "source": "4377906284759500514", 
+                    "target": "4377906285759500514", 
+                    "value": 147
+                }, 
+                {
+                    "source": "4377906287169500514", 
+                    "target": "4377906284759500514", 
+                    "value": 64
+                }, 
+                {
+                    "source": "4377906287869500514", 
+                    "target": "4377906284759500514", 
+                    "value": 74
+                }, 
+                {
+                    "source": "4377906282959500514", 
+                    "target": "4377906283141600514", 
+                    "value": 60
+                }, 
+                {
+                    "source": "4377906282959500514", 
+                    "target": "4377906286141600514", 
+                    "value": 41
+                }, 
+                {
+                    "source": "4377906283959500514", 
+                    "target": "4377906282959500514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "4377906284769500514", 
+                    "target": "4377906283769500514", 
+                    "value": 26
+                }, 
+                {
+                    "source": "4377906282769500514", 
+                    "target": "4377906284769500514", 
+                    "value": 68
+                }, 
+                {
+                    "source": "3377906280395510514", 
+                    "target": "4377906281041600514", 
+                    "value": 118
+                }, 
+                {
+                    "source": "3377906280395510514", 
+                    "target": "3377906283328510514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "", 
+                    "target": "3377906280395510514", 
+                    "value": 59
+                }, 
+                {
+                    "source": "4377906283525800514", 
+                    "target": "4377906280234600514", 
+                    "value": 850
+                }, 
+                {
+                    "source": "4377906288234600514", 
+                    "target": "4377906283525800514", 
+                    "value": 1015
+                }, 
+                {
+                    "source": "4377906288194800514", 
+                    "target": "4377906287194800514", 
+                    "value": 213
+                }, 
+                {
+                    "source": "9377906282776510514", 
+                    "target": "4377906288194800514", 
+                    "value": 96
+                }, 
+                {
+                    "source": "4377906285594800514", 
+                    "target": "4377906285334600514", 
+                    "value": 83
+                }, 
+                {
+                    "source": "4377906284594800514", 
+                    "target": "4377906285594800514", 
+                    "value": 270
+                }, 
+                {
+                    "source": "4377906289813600514", 
+                    "target": "4377906289243600514", 
+                    "value": 28
+                }, 
+                {
+                    "source": "4377906289813600514", 
+                    "target": "4377906288243600514", 
+                    "value": 51
+                }, 
+                {
+                    "source": "4377906289525800514", 
+                    "target": "4377906289813600514", 
+                    "value": 33
+                }, 
+                {
+                    "source": "4377906284141600514", 
+                    "target": "4377906282141600514", 
+                    "value": 122
+                }, 
+                {
+                    "source": "4377906283141600514", 
+                    "target": "4377906284141600514", 
+                    "value": 97
+                }, 
+                {
+                    "source": "4377906289244800514", 
+                    "target": "4377906289525800514", 
+                    "value": 85
+                }, 
+                {
+                    "source": "4377906282532600514", 
+                    "target": "4377906289244800514", 
+                    "value": 95
+                }, 
+                {
+                    "source": "4377906281969500514", 
+                    "target": "4377906283141600514", 
+                    "value": 36
+                }, 
+                {
+                    "source": "4377906289869500514", 
+                    "target": "4377906281969500514", 
+                    "value": 62
+                }, 
+                {
+                    "source": "4377906280969500514", 
+                    "target": "4377906281969500514", 
+                    "value": 28
+                }, 
+                {
+                    "source": "3377906285434510514", 
+                    "target": "4377906282769500514", 
+                    "value": 66
+                }, 
+                {
+                    "source": "4377906283422600514", 
+                    "target": "3377906285434510514", 
+                    "value": 28
+                }, 
+                {
+                    "source": "3377906289674510514", 
+                    "target": "4377906280913600514", 
+                    "value": 77
+                }, 
+                {
+                    "source": "3377906286918510514", 
+                    "target": "3377906289674510514", 
+                    "value": 73
+                }, 
+                {
+                    "source": "3377906287674510514", 
+                    "target": "3377906289674510514", 
+                    "value": 83
+                }, 
+                {
+                    "source": "4377906287243600514", 
+                    "target": "3377906289674510514", 
+                    "value": 77
+                }, 
+                {
+                    "source": "3377906285934510514", 
+                    "target": "3377906289674510514", 
+                    "value": 85
+                }, 
+                {
+                    "source": "4377906284838500514", 
+                    "target": "3377906284028510514", 
+                    "value": 310
+                }, 
+                {
+                    "source": "4377906289525800514", 
+                    "target": "4377906284838500514", 
+                    "value": 126
+                }, 
+                {
+                    "source": "3377906287886510514", 
+                    "target": "4377906289063800514", 
+                    "value": 385
+                }, 
+                {
+                    "source": "9377906285615510514", 
+                    "target": "3377906287886510514", 
+                    "value": 277
+                }, 
+                {
+                    "source": "3377906287934510514", 
+                    "target": "3377906287886510514", 
+                    "value": 294
+                }, 
+                {
+                    "source": "4377906282541600514", 
+                    "target": "3377906287886510514", 
+                    "value": 529
+                }, 
+                {
+                    "source": "9377906286615510514", 
+                    "target": "9377906285615510514", 
+                    "value": 64
+                }, 
+                {
+                    "source": "4377906289041600514", 
+                    "target": "9377906286615510514", 
+                    "value": 254
+                }, 
+                {
+                    "source": "4377906286843600514", 
+                    "target": "", 
+                    "value": 192
+                }, 
+                {
+                    "source": "4377906282653600514", 
+                    "target": "4377906286843600514", 
+                    "value": 322
+                }, 
+                {
+                    "source": "4377906288243600514", 
+                    "target": "4377906287243600514", 
+                    "value": 75
+                }, 
+                {
+                    "source": "4377906289813600514", 
+                    "target": "4377906288243600514", 
+                    "value": 51
+                }, 
+                {
+                    "source": "4377906286343600514", 
+                    "target": "4377906288893600514", 
+                    "value": 187
+                }, 
+                {
+                    "source": "4377906285343600514", 
+                    "target": "4377906286343600514", 
+                    "value": 175
+                }, 
+                {
+                    "source": "4377906286681600514", 
+                    "target": "4377906280329500514", 
+                    "value": 143
+                }, 
+                {
+                    "source": "4377906285681600514", 
+                    "target": "4377906286681600514", 
+                    "value": 37
+                }, 
+                {
+                    "source": "4377906288421600514", 
+                    "target": "", 
+                    "value": 128
+                }, 
+                {
+                    "source": "4377906280329500514", 
+                    "target": "4377906288421600514", 
+                    "value": 264
+                }, 
+                {
+                    "source": "4377906286334600514", 
+                    "target": "4377906288421600514", 
+                    "value": 161
+                }, 
+                {
+                    "source": "4377906289041600514", 
+                    "target": "3377906285934510514", 
+                    "value": 254
+                }, 
+                {
+                    "source": "4377906289041600514", 
+                    "target": "9377906286615510514", 
+                    "value": 254
+                }, 
+                {
+                    "source": "4377906288041600514", 
+                    "target": "4377906289041600514", 
+                    "value": 328
+                }, 
+                {
+                    "source": "4377906286032600514", 
+                    "target": "", 
+                    "value": 257
+                }, 
+                {
+                    "source": "4377906280334600514", 
+                    "target": "4377906286032600514", 
+                    "value": 435
+                }, 
+                {
+                    "source": "4377906281234600514", 
+                    "target": "4377906284525800514", 
+                    "value": 855
+                }, 
+                {
+                    "source": "4377906284653600514", 
+                    "target": "4377906281234600514", 
+                    "value": 143
+                }, 
+                {
+                    "source": "4377906286334600514", 
+                    "target": "3377906282418510514", 
+                    "value": 68
+                }, 
+                {
+                    "source": "4377906286334600514", 
+                    "target": "4377906288421600514", 
+                    "value": 161
+                }, 
+                {
+                    "source": "4377906285334600514", 
+                    "target": "4377906286334600514", 
+                    "value": 93
+                }
+            ], 
+            "symbol": "circle", 
+            "focusNodeAdjacency": true, 
+            "categories": null, 
+            "layout": "force", 
+            "name": "", 
+            "type": "graph", 
+            "label": {
+                "emphasis": {
+                    "show": true
+                }, 
+                "normal": {
+                    "position": "outside", 
+                    "textStyle": {
+                        "color": null, 
+                        "fontSize": 12
+                    }, 
+                    "show": false
+                }
+            }, 
+            "data": [
+                {
+                    "name": "4377906289869500514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906284594800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906289425800514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906284525800514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906284422600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906282532600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281741600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906288593600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906284514600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906284959500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906287169500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906282969500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906283328510514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "4377906283815800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906282815800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906285041600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906282141600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906282541600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906283422600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906288893600514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "4377906282763800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906287674510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906287934510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "9377906285615510514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "9377906283125510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906280815800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906280784800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "9377906285566510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "9377906283776510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281763800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906289863800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906285343600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906284653600514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906287063800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906287869500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906286041600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906288041600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281141600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906289141600514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "3377906284395510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906283759500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906283959500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906286918510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906284028510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "3377906288228510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906280334600514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906285681600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281784800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906288425800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906280763800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906280863800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906287863800514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "3377906281774510514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906288738500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906280329500514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "4377906285525800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906286525800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906280241600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281241600514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "4377906280344800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906288234600514", 
+                    "symbolSize": 6
+                }, 
+                {
+                    "name": "4377906285334600514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "4377906289063800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906287663800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906289663800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906289228510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906286169500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906282769500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906288869500514", 
+                    "symbolSize": 15
+                }, 
+                {
+                    "name": "4377906280969500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906282759500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906285759500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281959500514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906287959500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "3377906289434510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906287425800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906289525800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906280141600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906286141600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906280234600514", 
+                    "symbolSize": 6
+                }, 
+                {
+                    "name": "4377906288959500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906283769500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906280028510514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "3377906285934510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "3377906289044510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "9377906284555510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "9377906286566510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "9377906289175510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906287194800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "9377906282776510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906281041600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906285141600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906282418510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "3377906282328510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "9377906281555510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "9377906288175510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906282653600514", 
+                    "symbolSize": 6
+                }, 
+                {
+                    "name": "4377906280913600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906287243600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906289243600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906283141600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906287141600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906285032600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906288063800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906280163800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906288663800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906281518510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906284759500514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906282959500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906284769500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906280395510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906283525800514", 
+                    "symbolSize": 6
+                }, 
+                {
+                    "name": "4377906288194800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906285594800514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906289813600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906284141600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906289244800514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906281969500514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906285434510514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "3377906289674510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906284838500514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "3377906287886510514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "9377906286615510514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906286843600514", 
+                    "symbolSize": 6
+                }, 
+                {
+                    "name": "4377906288243600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906286343600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906286681600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906288421600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906289041600514", 
+                    "symbolSize": 9
+                }, 
+                {
+                    "name": "4377906286032600514", 
+                    "symbolSize": 12
+                }, 
+                {
+                    "name": "4377906281234600514", 
+                    "symbolSize": 3
+                }, 
+                {
+                    "name": "4377906286334600514", 
+                    "symbolSize": 15
+                }
+            ], 
+            "roam": true, 
+            "lineStyle": {
+                "normal": {
+                    "opacity": 1, 
+                    "width": 1, 
+                    "type": "solid", 
+                    "curveness": 0
+                }
+            }, 
+            "circular": {
+                "rotateLabel": false
+            }
+        }
+    ], 
+    "toolbox": {
+        "feature": {
+            "saveAsImage": {
+                "show": true
+            }
+        }, 
+        "top": "center", 
+        "left": "right", 
+        "orient": "vertical", 
+        "show": true
+    }, 
+    "legend": {
+        "show": true, 
+        "top": "top", 
+        "data": [], 
+        "orient": "horizontal", 
+        "selectedMode": true, 
+        "left": "center"
+    }, 
+    "tooltip": {}
+};
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
